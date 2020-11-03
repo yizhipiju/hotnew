@@ -46,7 +46,17 @@ const routes = [
 		name:'article', 
 		component:()=>import('@/views/article/'),
 		props:true
-	} 
+	},
+	{
+		path:'/user/profile',
+		name:'user-profile',
+		component:()=>import('@/views/user-profile')
+	},
+	{
+		path:'/user/chat',
+		name:'user-chat',
+		component:()=>import('@/views/user-chat')
+	}
 ]
 
 const router = new VueRouter({

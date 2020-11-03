@@ -8,7 +8,7 @@
 		  <van-cell class="base-info" center :border="false">
 			  <van-image class="avatar" slot="icon" fit="cover" round :src="currentUser.photo" />
 			  <div class="name" slot="title">{{currentUser.name}}</div>
-			  <van-button class="update-btn" size="mini" round type="primary" >编辑资料</van-button>
+			  <van-button class="update-btn" size="mini" round type="primary" to="/user/profile">编辑资料</van-button>
 		  </van-cell>
 		  
 		  <van-grid :border="false" class="data-info">
@@ -52,7 +52,7 @@
 		</van-grid>
 		
 		<van-cell title="消息通知" is-link to="" class="message1 mb-4" />
-		<van-cell title="小爱同学" is-link to="" class="message2 mb-8" />
+		<van-cell title="小爱同学" is-link to="/user/chat" class="message2 mb-8" />
 		<van-cell v-if="user" @click="onLogout" title="退出登录" class="logout-cell" />
 		
 	</div>
