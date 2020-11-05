@@ -1,7 +1,13 @@
 <template>
 	<div class="comment-list">
 		<van-cell>全部标题</van-cell>
-		<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+		<van-list 
+			v-model="loading" 
+			:finished="finished" 
+			finished-text="没有更多了" 
+			@load="onLoad"
+			
+		>
 			<comment-item 
 				v-for="(comment,index) in list"
 				:key="index" 
@@ -54,7 +60,7 @@
 
 		},
 		mounted() {
-
+			
 		},
 		methods: {
 			async onLoad() {

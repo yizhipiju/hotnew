@@ -27,7 +27,13 @@
 		    return {
 		      active: 0,
 		    };
-		  },
+		},
+		computed:{
+			
+		},
+		mounted() {
+			this.$store.commit('addCachePage','LayoutIndex')
+		}
 	}
 </script>
 

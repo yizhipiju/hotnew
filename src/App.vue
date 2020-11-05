@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <keep-alive :include="cachePages">
 		<router-view/>
 	</keep-alive>
 	
@@ -8,8 +8,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+	
 export default {
-  name:"App" 
+  name:"App",
+  computed:{
+	  ...mapState(['cachePages'])
+  }
 }
 </script>
 

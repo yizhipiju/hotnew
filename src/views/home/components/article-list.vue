@@ -6,6 +6,7 @@
 		    :finished="finished"
 		    finished-text="没有更多了"
 		    @load="onLoad"
+			ref="article-list"
 		  >
 			
 			<article-item
@@ -22,7 +23,7 @@
 <script>
 	import { getArticles } from '@/api/article'
 	import ArticleItem from '@/components/article-item'
-	
+	import { debounce } from 'lodash'
 	
 	export default{
 		name:"ArticleList",
@@ -42,9 +43,19 @@
 		      finished: false,
 		      timestamp:null,
 			  isRefreshLoading:false,
-			  refreshSuccessText:''
+			  refreshSuccessText:'',
+			  scrollTop:0
 		    }
-		  },
+		},
+		mounted() {
+			const articleList = this.$refs['article-list']
+			articleList.onscroll = debounce(() => {
+				this.scrollTop = articleList.scrollTop
+			},50)
+		},
+		activated() {
+			this.$refs['article-list'].scrollTop = this.scrollTop
+		},
 		methods: {
 		    async onLoad() {
 				
