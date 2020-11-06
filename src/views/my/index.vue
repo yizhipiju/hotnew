@@ -46,7 +46,7 @@
 					redirect:'/my'
 				}
 			})">	
-				<img src="./未登录.png" />
+				<img src="./nologin.png" />
 			</div>
 			<div class="text">登录 / 注册</div>
 		</div>
